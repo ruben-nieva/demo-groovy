@@ -1,0 +1,57 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.ma</groupId>
+  <artifactId>demo-parentpom</artifactId>
+  <version>1.0-Local</version>
+  <packaging>pom</packaging>
+
+  <!-- =================================================================================================== -->
+
+  <properties>
+    <org.slf4j.version>1.7.4</org.slf4j.version>
+    <log4j.log4j.version>1.2.17</log4j.log4j.version>
+    <org.springframework.version>3.2.3.RELEASE</org.springframework.version>
+    <!-- =================================================================================== -->
+    <junit.version>4.8.2</junit.version>
+    <hsql.version>2.2.8</hsql.version>
+    <!-- =================================================================================== -->
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+    <!-- =================================================================================== -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+    <java.source.version>1.7</java.source.version>
+    <java.target.version>1.7</java.target.version>
+  </properties>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.1.9</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+					<dateFormat>yyyyMMdd-HHmmss</dateFormat>
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>git.properties</generateGitPropertiesFilename>
+					<skipPoms>false</skipPoms>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
